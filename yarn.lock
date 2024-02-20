@@ -832,6 +832,11 @@
   resolved "https://registry.yarnpkg.com/@vue/shared/-/shared-3.1.5.tgz#74ee3aad995d0a3996a6bb9533d4d280514ede03"
   integrity sha512-oJ4F3TnvpXaQwZJNF3ZK+kLPHKarDmJjJ6jyzVNDKH9md1dptjC7lWR//jrGuLdek/U6iltWxqAnYOu8gCiOvA==
 
+"@xata.io/client@^0.29.1":
+  version "0.29.1"
+  resolved "https://registry.yarnpkg.com/@xata.io/client/-/client-0.29.1.tgz#9402adf736303a25696f182cc46afa82330757ab"
+  integrity sha512-JuxRxk28tDFQUOgxcSB0VRWvK+t1c307tSgESZmwzu1Uj0NxvD+YH4vW2Ob5A4o/daK0wgaITO22vsdTidwakQ==
+
 acorn@^8.11.2:
   version "8.11.3"
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-8.11.3.tgz#71e0b14e13a4ec160724b38fb7b0f233b1b81d7a"

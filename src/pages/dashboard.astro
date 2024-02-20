@@ -1,6 +1,16 @@
 ---
+
+import { XataClient } from '../xata';
+ 
 import Layout from "../layouts/Layout.astro";
 import { supabase } from "../lib/supabase";
+
+const xata = new XataClient({
+  apiKey: import.meta.env.XATA_API_KEY,
+  branch: import.meta.env.XATA_BRANCH
+});
+ 
+let posts = await xata.db.Posts.getAll();
 
 const { cookies, redirect } = Astro;
 
@@ -40,4 +50,26 @@ const role = data?.user?.role;
   <form action="/api/auth/signout">
     <button type="submit">Sign out</button>
   </form>
+  <form action="/api/auth/createpost" method="post">
+    <input type="text" name="title" id="title">
+    <button type="submit">Criar post</button>
+  </form>
+  <div class="w-full max-w-5xl mt-16">
+    {posts.length === 0 && <p>No blog posts found</p>}
+    {posts.map((posts) => (
+      <div class="mb-16">
+        <p class="text-xs mb-2 text-purple-950 dark:text-purple-200">{posts.pubDate?.toDateString()}</p>
+        <h2 class="text-2xl mb-2">
+          <a href={`posts/${posts.slug}`}>{posts.title}</a>
+        </h2>
+        <p class="text-purple-950 dark:text-purple-200 mb-5">{posts.description}</p>
+        <a
+          href={`posts/${posts.slug}`}
+          class="px-4 py-2 font-semibold text-sm bg-purple-700 text-white rounded-lg shadow-sm w-fit"
+        >
+          Read more &rarr;
+        </a>
+      </div>
+    ))}
+  </div>
 </Layout>
