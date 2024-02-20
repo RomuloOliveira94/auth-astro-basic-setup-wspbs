@@ -10,8 +10,11 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/alpinejs": "^0.4.0",
     "@astrojs/check": "^0.5.4",
     "@supabase/supabase-js": "^2.39.6",
+    "@types/alpinejs": "^3.13.6",
+    "alpinejs": "^3.13.5",
     "astro": "^4.4.0",
     "typescript": "^5.3.3"
   }

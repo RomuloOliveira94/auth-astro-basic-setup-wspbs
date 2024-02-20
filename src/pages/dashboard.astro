@@ -28,10 +28,14 @@ if (error) {
 }
 
 const email = data?.user?.email;
+const role = data?.user?.role;
+
 ---
 
 <Layout title="dashboard">
   <h1>Welcome {email}</h1>
+  {role === "Admin" && <h2>Admin</h2>}
+  <h2>Você é um {role}</h2>
   <p>We are happy to see you here</p>
   <form action="/api/auth/signout">
     <button type="submit">Sign out</button>
